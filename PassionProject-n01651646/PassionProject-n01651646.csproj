@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202406060446201_Pet.designer.cs">
       <DependentUpon>202406060446201_Pet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202406080642403_Inquiry.cs" />
+    <Compile Include="Migrations\202406080642403_Inquiry.designer.cs">
+      <DependentUpon>202406080642403_Inquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -321,6 +325,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202406060446201_Pet.resx">
       <DependentUpon>202406060446201_Pet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406080642403_Inquiry.resx">
+      <DependentUpon>202406080642403_Inquiry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
