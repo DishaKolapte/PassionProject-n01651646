@@ -1,0 +1,30 @@
+﻿@model PassionProject_n01651646.Models.PetDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Pet</h2>
+
+<form method="POST" action="/Pet/Update/@Model.PetId">
+    <input type="hidden" name="PetId" value="@Model.PetId" />
+    <div>
+        <label>Name</label>
+        <input type="text" name="Name" value="@Model.Name" />
+    </div>
+    <div>
+        <label>Species</label>
+        <input type="text" name="Species" value="@Model.Species" />
+    </div>
+    <div>
+        <label>Breed</label>
+        <input type="text" name="Breed" value="@Model.Breed" />
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="number" name="Age" value="@Model.Age" />
+    </div>
+    <div>
+        <input type="submit" value="Update" />
+    </div>
+</form>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Create Inquiry";
+}
+
+<h2>Create Inquiry</h2>
+<form action="/Inquiry/Create" method="POST">
+    <div>
+        <label>Pet ID:</label>
+        <input type="text" name="Name" />
+    </div>
+    <div>
+        <label>User ID:</label>
+        <input type="text" name="Username" />
+    </div>
+    <div>
+        <label>Inquiry Text:</label>
+        <textarea name="InquiryText"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Add Inquiry" />
+    </div>
+</form>

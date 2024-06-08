@@ -1,0 +1,30 @@
+﻿@model PassionProject_n01651646.Models.PetDto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Pet</h2>
+
+<h3>Are you sure you want to delete this pet?</h3>
+
+<div>
+    <label>Name:</label> @Model.Name
+</div>
+<div>
+    <label>Species:</label> @Model.Species
+</div>
+<div>
+    <label>Breed:</label> @Model.Breed
+</div>
+<div>
+    <label>Age:</label> @Model.Age
+</div>
+
+<form method="POST" action="/Pet/Delete/@Model.PetId">
+    <input type="hidden" name="PetId" value="@Model.PetId" />
+    <div>
+        <input type="submit" value="Delete" />
+        <a href="/Pet/List">Cancel</a>
+    </div>
+</form>

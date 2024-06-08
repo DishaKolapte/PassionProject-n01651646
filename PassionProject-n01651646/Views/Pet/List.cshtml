@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach(var pet in Model)
+{
+    <h2><a href="/Pet/Details/@pet.PetId">@pet.Name</a></h2>
+    <div>species: @pet.Species</div>
+    <div>breed: @pet.Breed</div>
+    <div>age: @pet.Age years</div>
+}
+

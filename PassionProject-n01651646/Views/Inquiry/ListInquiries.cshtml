@@ -1,0 +1,12 @@
+﻿@model IEnumerable<PassionProject_n01651646.Models.InquiryDto>
+@{
+    ViewBag.Title = "List of Inquiries";
+}
+
+<h2>List of Inquiries</h2>
+@foreach (var inquiry in Model)
+{
+    <h2><a href="/Inquiry/Details/@inquiry.InquiryId">Inquiry for @inquiry.PetName</a></h2>
+    <div>User: @inquiry.Username</div>
+    <div>Inquiry Text: @inquiry.InquiryText</div>
+}
