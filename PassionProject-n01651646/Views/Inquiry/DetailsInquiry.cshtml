@@ -1,11 +1,9 @@
-﻿@model PassionProject_n01651646.Models.InquiryDto
-
-@{
-    ViewBag.Title = "Details";
+﻿@{
+    ViewBag.Title = "Inquiry Details";
 }
 
 <a href="/Inquiry/ListInquiries">Go back to list</a>
-<h2>@Model.PetName</h2>
+<h2>Inquiry Details for @Model.PetName</h2>
+<div>Pet Name: @Model.PetName</div>
 <div>Username: @Model.Username</div>
 <div>Inquiry Text: @Model.InquiryText</div>
-

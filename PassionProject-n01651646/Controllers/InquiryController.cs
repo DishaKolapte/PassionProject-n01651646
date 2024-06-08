@@ -33,7 +33,7 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Inquiry/Details/5
-        public ActionResult Details(int id)
+        public ActionResult DetailsInquiry(int id)
         {
             string url = "findinquiry/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -76,7 +76,7 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Inquiry/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditInquiry(int id)
         {
             string url = "findinquiry/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -109,7 +109,7 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Inquiry/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteInquiry(int id)
         {
             string url = "findinquiry/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
