@@ -17,7 +17,17 @@ namespace PassionProject_n01651646.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/PetData/ListPets
+        /// <summary>
+        /// Retrieves a list of all pets in the database.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: A list of pets with their details.
+        /// </returns>
+        /// <example>
+        /// GET: api/PetData/ListPets
+        /// </example>
+
         [HttpGet]
         [Route("api/PetData/ListPets")]
 
@@ -39,7 +49,16 @@ namespace PassionProject_n01651646.Controllers
             return PetDtos;
         }
 
-        // GET: api/PetData/FindPet/5
+        /// <summary>
+        /// Retrieves details of a specific pet based on the provided ID.
+        /// </summary>
+        /// <param name="id">The ID of the pet to retrieve.</param>
+        /// <returns>
+        /// </returns>
+        /// <example>
+        /// GET: api/PetData/FindPet/5
+        /// </example>
+
         [ResponseType(typeof(Pet))]
         [HttpGet]
         [Route("api/PetData/FindPet/{id}")]
@@ -65,7 +84,17 @@ namespace PassionProject_n01651646.Controllers
             return Ok(PetDto);
         }
 
-        // POST: api/PetData/UpdatePet/5
+        /// <summary>
+        /// Updates the details of an existing pet based on the provided ID and pet data.
+        /// </summary>
+        /// <param name="id">The ID of the pet to update.</param>
+        /// <param name="pet">The updated pet data.</param>
+        /// <returns>
+        /// </returns>
+        /// <example>
+        /// POST: api/PetData/UpdatePet/5
+        /// </example>
+
         [ResponseType(typeof(void))]
         [HttpPost]
         [Route("api/PetData/UpdatePet/{id}")]
@@ -103,7 +132,16 @@ namespace PassionProject_n01651646.Controllers
         }
 
 
-        // POST: api/PetData/AddPet
+        /// <summary>
+        /// Adds a new pet to the database.
+        /// </summary>
+        /// <param name="pet">The pet data to add.</param>
+        /// <returns>
+        /// </returns>
+        /// <example>
+        /// POST: api/PetData/AddPet
+        /// </example>
+
         [ResponseType(typeof(Pet))]
         [HttpPost]
         [Route("api/PetData/AddPet")]
@@ -120,7 +158,16 @@ namespace PassionProject_n01651646.Controllers
             return Ok(pet);
         }
 
-        // POST: api/PetData/DeletePet/5
+        /// <summary>
+        /// Deletes a pet from the database based on the provided ID.
+        /// </summary>
+        /// <param name="id">The ID of the pet to delete.</param>
+        /// <returns>
+        /// </returns>
+        /// <example>
+        /// POST: api/PetData/DeletePet/5
+        /// </example>
+
         [ResponseType(typeof(Pet))]
         [HttpPost]
         [Route("api/PetData/DeletePet/{id}")]
@@ -137,7 +184,17 @@ namespace PassionProject_n01651646.Controllers
 
             return Ok();
         }
-        // GET: api/PetData/ListInquiriesForPet/5
+        /// <summary>
+        /// Retrieves a list of inquiries for a specific pet based on the provided pet ID.
+        /// </summary>
+        /// <param name="petid">The ID of the pet for which to retrieve inquiries.</param>
+        /// <returns>
+        /// CONTENT: A list of inquiries related to the specified pet.
+        /// </returns>
+        /// <example>
+        /// GET: api/PetData/ListInquiriesForPet/5
+        /// </example>
+
         [HttpGet]
         [Route("api/PetData/ListInquiriesForPet/{petid}")]
         public IEnumerable<InquiryDto> ListInquiriesForPet(int petid)
