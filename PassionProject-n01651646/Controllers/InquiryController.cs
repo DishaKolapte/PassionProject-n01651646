@@ -33,9 +33,9 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Inquiry/Details/5
-        public ActionResult DetailsInquiry(int id)
+        public ActionResult DetailsInquiry(int InquiryId)
         {
-            string url = "findinquiry/" + id;
+            string url = "findinquiry/" + InquiryId;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             InquiryDto selectedInquiry = response.Content.ReadAsAsync<InquiryDto>().Result;
@@ -49,14 +49,16 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Inquiry/NewInquiry
-        public ActionResult NewInquiry()
+        public ActionResult NewInquiry(int PetId)
         {
+            ViewBag.PetId = PetId;
             return View();
         }
 
         // POST: Inquiry/Create
         [HttpPost]
-        public ActionResult Create(Inquiry inquiry)
+        [Authorize]
+        public ActionResult Create(InquiryDto inquiry)
         {
             string url = "addinquiry";
             string jsonpayload = jss.Serialize(inquiry);
@@ -88,6 +90,7 @@ namespace PassionProject_n01651646.Controllers
 
         // POST: Inquiry/Update/5
         [HttpPost]
+        [Authorize]
         public ActionResult Update(int id, Inquiry inquiry)
         {
             string url = "updateinquiry/" + id;
@@ -109,9 +112,10 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Inquiry/Delete/5
-        public ActionResult DeleteInquiry(int id)
+        [Authorize]
+        public ActionResult DeleteInquiry(int InquiryId)
         {
-            string url = "findinquiry/" + id;
+            string url = "findinquiry/" + InquiryId;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             InquiryDto selectedInquiry = response.Content.ReadAsAsync<InquiryDto>().Result;
@@ -121,6 +125,7 @@ namespace PassionProject_n01651646.Controllers
 
         // POST: Inquiry/Delete/5
         [HttpPost]
+        [Authorize]
         public ActionResult Delete(int id, FormCollection collection)
         {
             string url = "deleteinquiry/" + id;

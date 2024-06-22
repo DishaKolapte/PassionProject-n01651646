@@ -17,9 +17,9 @@ namespace PassionProject_n01651646.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/PetData/List
+        // GET: api/PetData/ListPets
         [HttpGet]
-        [Route("api/PetData/List")]
+        [Route("api/PetData/ListPets")]
 
 
         public IEnumerable<PetDto> ListPets()
@@ -135,6 +135,26 @@ namespace PassionProject_n01651646.Controllers
             db.SaveChanges();
 
             return Ok();
+        }
+        // GET: api/PetData/ListInquiriesForPet/5
+        [HttpGet]
+        [Route("api/PetData/ListInquiriesForPet/{petid}")]
+        public IEnumerable<InquiryDto> ListInquiriesForPet(int petid)
+        {
+            // Retrieve inquiries for the specified pet
+            List<Inquiry> inquiries = db.Inquiries.Where(i => i.PetId == petid).ToList();
+            List<InquiryDto> inquiryDtos = new List<InquiryDto>();
+
+            inquiries.ForEach(i => inquiryDtos.Add(new InquiryDto()
+            {
+                InquiryId = i.InquiryId,
+                PetName = i.PetName,
+                PetId = i.PetId,
+                Username = i.Username,
+                InquiryText = i.InquiryText
+            }));
+
+            return inquiryDtos;
         }
 
         protected override void Dispose(bool disposing)

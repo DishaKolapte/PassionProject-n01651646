@@ -2,11 +2,25 @@
     ViewBag.Title = "List Inquiries";
 }
 
-<h2>List Inquiries</h2>
-@foreach (var inquiry in Model)
-{
-    <h2><a href="/Inquiry/Details/@inquiry.InquiryId">@inquiry.PetName - @inquiry.Username</a></h2>
-    <div>Pet Name: @inquiry.PetName</div>
-    <div>Username: @inquiry.Username</div>
-    <div>Inquiry Text: @inquiry.InquiryText</div>
-}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 class="mb-4">List Inquiries</h2>
+
+            @foreach (var inquiry in Model)
+            {
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/Inquiry/DetailsInquiry?InquiryId=@inquiry.InquiryId">@inquiry.PetName - @inquiry.Username</a>
+                        </h5>
+                        <p class="card-text"><strong>Pet Name:</strong> @inquiry.PetName</p>
+                        <p class="card-text"><strong>Username:</strong> @inquiry.Username</p>
+                        <p class="card-text"><strong>Inquiry Text:</strong> @inquiry.InquiryText</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

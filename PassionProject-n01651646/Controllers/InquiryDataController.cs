@@ -30,7 +30,6 @@ namespace PassionProject_n01651646.Controllers
                 PetName = i.PetName,
                 PetId = i.PetId,
                 Username = i.Username,
-                UserId = i.UserId,
                 InquiryText = i.InquiryText
             }));
 
@@ -55,7 +54,6 @@ namespace PassionProject_n01651646.Controllers
                 PetName = inquiry.PetName,
                 PetId = inquiry.PetId,
                 Username = inquiry.Username,
-                UserId = inquiry.UserId,
                 InquiryText = inquiry.InquiryText
             };
 
@@ -100,11 +98,13 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // POST: api/InquiryData/AddInquiry
-        [ResponseType(typeof(Inquiry))]
+
         [HttpPost]
-        [Route("api/InquiryData/AddInquiry")]
+        [Route("api/inquirydata/addinquiry")]
+        [ResponseType(typeof(Inquiry))]
         public IHttpActionResult AddInquiry(Inquiry inquiry)
         {
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

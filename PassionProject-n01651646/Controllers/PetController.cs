@@ -36,11 +36,19 @@ namespace PassionProject_n01651646.Controllers
         // GET: Pet/Details/5
         public ActionResult Details(int id)
         {
-            // Objective: communicate with our pet data api to retrieve one pet
+            // Communicate with our pet data api to retrieve one pet
             string url = "findpet/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             PetDto selectedPet = response.Content.ReadAsAsync<PetDto>().Result;
+
+            // Now fetch inquiries for this pet
+            url = "ListInquiriesForPet/" + id;
+            HttpResponseMessage inquiryResponse = client.GetAsync(url).Result;
+
+            IEnumerable<InquiryDto> inquiries = inquiryResponse.Content.ReadAsAsync<IEnumerable<InquiryDto>>().Result;
+
+            ViewBag.Inquiries = inquiries;
 
             return View(selectedPet);
         }
@@ -51,6 +59,7 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Pet/New
+        [Authorize]
         public ActionResult New()
         {
             return View();
@@ -58,7 +67,7 @@ namespace PassionProject_n01651646.Controllers
 
         // POST: Pet/Create
         [HttpPost]
-
+        [Authorize]
         public ActionResult Create(Pet pet)
         {
             Debug.WriteLine("The JSON payload is:");
@@ -82,6 +91,7 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Pet/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             // Grab the pet information
@@ -95,6 +105,7 @@ namespace PassionProject_n01651646.Controllers
 
         // POST: Pet/Update/5
         [HttpPost]
+        [Authorize]
         public ActionResult Update(int id, Pet pet)
         {
             try
@@ -126,6 +137,7 @@ namespace PassionProject_n01651646.Controllers
         }
 
         // GET: Pet/Delete/5
+        [Authorize]
         public ActionResult Delete(int id)
         {
             string url = "findpet/" + id;
@@ -138,6 +150,7 @@ namespace PassionProject_n01651646.Controllers
 
         // POST: Pet/Delete/5
         [HttpPost]
+        [Authorize]
         public ActionResult Delete(int id, FormCollection collection)
         {
             string url = "deletepet/" + id;

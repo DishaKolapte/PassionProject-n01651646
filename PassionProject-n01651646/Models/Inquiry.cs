@@ -16,17 +16,13 @@ namespace PassionProject_n01651646.Models
 
         [ForeignKey("Pet")]
         public int PetId { get; set; }
+        public virtual Pet Pet { get; set; }
 
         public string Username { get; set; }
 
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-
         public string InquiryText { get; set; }
 
-        // Navigation properties
-        public virtual Pet Pet { get; set; }
-        public virtual User User { get; set; }
+
     }
 
     public class InquiryDto
@@ -35,7 +31,6 @@ namespace PassionProject_n01651646.Models
         public string PetName { get; set; }
         public int PetId { get; set; }
         public string Username { get; set; }
-        public int UserId { get; set; }
         public string InquiryText { get; set; }
     }
 }
