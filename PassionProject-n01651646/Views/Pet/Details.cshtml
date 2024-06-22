@@ -4,36 +4,34 @@
     ViewBag.Title = "Details";
 }
 
-<div class="container">
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <a href="@Url.Action("List", "Pet")" class="btn btn-primary mb-3">Go back to list</a>
-            <div class="card">
-                <div class="card-header">
-                    <h2>@Model.Name</h2>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><strong>Species:</strong> @Model.Species</p>
-                    <p class="card-text"><strong>Breed:</strong> @Model.Breed</p>
-                    <p class="card-text"><strong>Age:</strong> @Model.Age years</p>
-                </div>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-secondary text-white">
+            <h2 class="card-title">@Model.Name</h2>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><strong>Species:</strong> @Model.Species</p>
+            <p class="card-text"><strong>Breed:</strong> @Model.Breed</p>
+            <p class="card-text"><strong>Age:</strong> @Model.Age years</p>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group" role="group" aria-label="Pet Actions">
+                <a href="/Pet/Edit/@Model.PetId" class="btn btn-primary">Update</a>
+                <a href="/Pet/Delete/@Model.PetId" class="btn btn-danger">Delete</a>
+                <a href="/Pet/List" class="btn btn-secondary">Back to List</a>
             </div>
-            <div class="mt-4">
-                <h3>Inquiries for @Model.Name</h3>
-                <ul class="list-group">
-                    @foreach (var inquiry in ViewBag.Inquiries)
-                    {
-                        <li class="list-group-item">
-                            <strong>From: @inquiry.Username</strong><br />
-                            @inquiry.InquiryText
-                        </li>
-                    }
-                </ul>
-            </div>
+        </div>
+        <div class="mt-4">
+            <h3 class="mb-3">Inquiries for @Model.Name</h3>
+            <ul class="list-group">
+                @foreach (var inquiry in ViewBag.Inquiries)
+                {
+                    <li class="list-group-item">
+                        <strong>From: @inquiry.Username</strong><br />
+                        @inquiry.InquiryText
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </div>
-
-@section scripts {
-
-}

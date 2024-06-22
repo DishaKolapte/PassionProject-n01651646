@@ -1,19 +1,32 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Us";
+    ViewBag.Message = "Get in Touch with PawCare";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+<main aria-labelledby="title" class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 id="title" class="text-center">@ViewBag.Title</h2>
+            <h3 class="text-center text-muted">@ViewBag.Message</h3>
+        </div>
+    </div>
+    <div class="row mt-4 text-center">
+        <div class="col-md-6">
+            <h4>Our Address</h4>
+            <address>
+                PawCare Pet Adoption<br />
+                1234 Happy Tails Ave<br />
+                Petville, PA 12345<br />
+                <abbr title="Phone">P:</abbr> (123) 456-7890
+            </address>
+        </div>
+        <div class="col-md-6 text-center">
+            <h4>Contact Us</h4>
+            <address>
+                <strong>Support:</strong> <a href="mailto:support@pawcare.com">support@pawcare.com</a><br />
+                <strong>Adoptions:</strong> <a href="mailto:adoptions@pawcare.com">adoptions@pawcare.com</a><br />
+                <strong>General Inquiries:</strong> <a href="mailto:info@pawcare.com">info@pawcare.com</a>
+            </address>
+        </div>
+    </div>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
-
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
 </main>

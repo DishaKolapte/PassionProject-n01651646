@@ -2,20 +2,20 @@
     ViewBag.Title = "List Inquiries";
 }
 
-<div class="container">
-    <div class="row mt-4">
+<div class="container mt-4">
+    <div class="row">
         <div class="col-md-12">
-            <h2 class="mb-4">List Inquiries</h2>
+            <h2 class="display-4 mb-4">List Inquiries</h2>
 
             @foreach (var inquiry in Model)
             {
-                <div class="card mb-3">
+                <div class="card mb-3 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="/Inquiry/DetailsInquiry?InquiryId=@inquiry.InquiryId">@inquiry.PetName - @inquiry.Username</a>
+                            <a href="/Inquiry/DetailsInquiry?InquiryId=@inquiry.InquiryId" class="text-primary">@inquiry.PetName - @inquiry.Username</a>
                         </h5>
-                        <p class="card-text"><strong>Pet Name:</strong> @inquiry.PetName</p>
-                        <p class="card-text"><strong>Username:</strong> @inquiry.Username</p>
+                        <p class="card-text mb-1"><strong>Pet Name:</strong> @inquiry.PetName</p>
+                        <p class="card-text mb-1"><strong>Username:</strong> @inquiry.Username</p>
                         <p class="card-text"><strong>Inquiry Text:</strong> @inquiry.InquiryText</p>
                     </div>
                 </div>
@@ -23,4 +23,3 @@
         </div>
     </div>
 </div>
-

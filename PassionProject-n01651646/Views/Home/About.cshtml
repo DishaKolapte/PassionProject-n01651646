@@ -1,9 +1,21 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "About Us";
+    ViewBag.Message = "Welcome to PawCare Pet Adoption!";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
+<main aria-labelledby="title" class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 id="title" class="text-center">@ViewBag.Title</h2>
+            <h3 class="text-center text-muted">@ViewBag.Message</h3>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <p class="lead">At Paws & Friends, our mission is to connect loving families with pets in need of a forever home. We believe every pet deserves a second chance at a happy life, and we are dedicated to making that happen through our comprehensive adoption process.</p>
 
-    <p>Use this area to provide additional information.</p>
+            <p>Thank you for considering adoption and supporting our mission. Together, we can make a difference in the lives of countless animals. If you have any questions or need further information, please don't hesitate to contact us.</p>
+
+            <p>Join us in giving pets the love and home they deserve. Adopt, don't shop!</p>
+        </div>
+    </div>
 </main>

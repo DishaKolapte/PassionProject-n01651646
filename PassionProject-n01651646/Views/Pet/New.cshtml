@@ -1,29 +1,34 @@
-﻿
-@{
-    ViewBag.Title = "Create";
+﻿@{
+    ViewBag.Title = "Create Pet";
 }
 
 <div class="container mt-4">
-    <h2 class="mb-4">Create Pet</h2>
-    <form action="/Pet/Create" method="POST">
-        <div class="form-group">
-            <label for="Name">Name:</label>
-            <input type="text" class="form-control" id="Name" name="Name" required />
+    <div class="card shadow-sm">
+        <div class="card-header bg-secondary text-white">
+            <h2 class="card-title">Create Pet</h2>
         </div>
-        <div class="form-group">
-            <label for="Species">Species:</label>
-            <input type="text" class="form-control" id="Species" name="Species" required />
+        <div class="card-body">
+            <form action="/Pet/Create" method="POST">
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="Name" name="Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Species" class="form-label">Species:</label>
+                    <input type="text" class="form-control" id="Species" name="Species" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Breed" class="form-label">Breed:</label>
+                    <input type="text" class="form-control" id="Breed" name="Breed" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Age" class="form-label">Age:</label>
+                    <input type="number" class="form-control" id="Age" name="Age" required>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-success">ADD</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="Breed">Breed:</label>
-            <input type="text" class="form-control" id="Breed" name="Breed" required />
-        </div>
-        <div class="form-group">
-            <label for="Age">Age:</label>
-            <input type="number" class="form-control" id="Age" name="Age" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Add Pet</button>
-    </form>
+    </div>
 </div>
-
-
